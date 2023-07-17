@@ -1,15 +1,18 @@
 "use client";
 
 import Link from "next/link";
+import React from "react";
 
 export default function JarComponent({
   name,
   version,
   updated,
+  color,
 }: {
   name: string;
   version: string;
   updated: string;
+  color?: string;
 }) {
   return (
     <div className="w-[95%] md:w-[95%] flex flex-row items-center justify-start gap-5 md:gap-10 bg-theme-background h-[120px] p-5">
@@ -27,7 +30,8 @@ export default function JarComponent({
       <div className="w-[1px] h-[80%] bg-white md:block hidden"></div>
       <div className="w-[70%] md:w-[55%] h-full   flex flex-row items-center justify-center gap-5 ">
         <p
-          className="md:text-[15px] text-[13px] font-medium p-3 bg-theme-accent rounded-[3px] border-4 border-theme-accent hover:bg-white hover:text-theme-accent transition-all ease-in-out duration-500 hover:cursor-pointer "
+          className="md:text-[15px] text-[13px] font-medium p-3 bg-[--color] rounded-[3px] border-4 border-[--color] hover:bg-white hover:text-[--color] transition-all ease-in-out duration-500 hover:cursor-pointer "
+          style={{ "--color": color } as React.CSSProperties}
           onClick={() => {
             window.open(
               `https://versions.revivenode.com/${name}/${name.toLowerCase()}-${version}.jar`,
@@ -39,7 +43,8 @@ export default function JarComponent({
         </p>
         <Link
           href="https://revivenode.com/"
-          className="md:text-[15px] text-[13px] font-medium p-3 bg-theme-accent rounded-[3px] border-4 border-theme-accent hover:bg-white hover:text-theme-accent transition-all ease-in-out duration-500 hover:cursor-pointer md:block hidden"
+          className="md:text-[15px] text-[13px] font-medium p-3 bg-[--color] rounded-[3px] border-4 border-[--color] hover:bg-white hover:text-[--color] transition-all ease-in-out duration-500 hover:cursor-pointer md:block hidden"
+          style={{ "--color": color } as React.CSSProperties}
         >
           CREATE SERVER
         </Link>

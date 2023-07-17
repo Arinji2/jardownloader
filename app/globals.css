@@ -17,6 +17,10 @@ html {
   background: white;
 }
 
+.navbar::-webkit-scrollbar-thumb {
+  background: #058b60;
+}
+
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #c2c2c2;

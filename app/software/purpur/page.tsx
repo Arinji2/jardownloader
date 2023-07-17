@@ -17,6 +17,7 @@ export default async function Home() {
             version={jar.version}
             updated={jar.updated_at}
             key={jar.version + jar.updated_at}
+            color="#78058B"
           />
         ))}
       </div>

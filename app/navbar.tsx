@@ -6,11 +6,12 @@ import {
   faCube,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 function Navbar() {
   const [open, setOpen] = useState(false);
+
   return (
-    <div className="md:w-[30%] w-full h-[100px] bg-theme-background md:h-[100svh]  sticky top-0 overflow-auto flex flex-col items-center justify-start md:border-r-[10px] border-theme-accent border-b-[5px] md:border-b-0">
+    <div className="md:w-[30%] z-[1000] w-full h-[100px] bg-theme-background md:h-[100svh]  sticky top-0 overflow-auto flex flex-col items-center justify-start  border-theme-accent border-b-[5px] md:border-0">
       <div className="w-full h-[100px] flex flex-row items-center justify-between">
         <div className="w-[20%] h-full flex flex-row items-center justify-center md:hidden ">
           <div className="w-fit h-fit p-4 bg-theme-accent flex flex-col items-center justify-center rounded-lg ml-5">
@@ -39,7 +40,7 @@ function Navbar() {
       <div
         className={`${
           open ? "translate-x-0 " : "-translate-x-[2000px] "
-        }transition-all ease-in-out duration-700 md:translate-x-0 h-[100svh] md:h-full w-full flex flex-col items-center justify-start gap-5 mt-10 md:static fixed top-14 bg-theme-background  overflow-auto`}
+        }transition-all navbar ease-in-out duration-700 md:translate-x-0 h-[100svh] md:h-full w-full flex flex-col items-center justify-start gap-5 mt-10 md:static fixed top-14 bg-theme-background  overflow-auto`}
       >
         <div
           className={` mt-10 rounded-[4px] p-4 w-fit h-fit flex flex-row items-center justify-center gap-7 bg-theme-accent `}
@@ -48,60 +49,72 @@ function Navbar() {
           <FontAwesomeIcon icon={faCube} className="w-[30px] h-[30px]" />
         </div>
         <NavbarComponent
+          setOpen={setOpen}
           name="VANILLA"
           image="/software/vanilla.png"
           color="#058B60"
         />
         <NavbarComponent
+          setOpen={setOpen}
           name="PAPER"
           image="/software/paper.png"
           color="#B02E2E"
         />
         <NavbarComponent
+          setOpen={setOpen}
           name="SPIGOT"
           image="/software/spigot.png"
           color="#DA8529"
         />
         <NavbarComponent
+          setOpen={setOpen}
           name="PURPUR"
           image="/software/purpur.png"
           color="#78058B"
         />
         <NavbarComponent
+          setOpen={setOpen}
           name="FABRIC"
           image="/software/fabric.png"
           color="#B69D69"
         />
         <NavbarComponent
+          setOpen={setOpen}
           name="FORGE"
           image="/software/forge.png"
           color="#E5E5E5"
         />
         <NavbarComponent
+          setOpen={setOpen}
           name="BUNGEECORD"
           image="/software/bungee.png"
           color="#058B8B"
         />
         <NavbarComponent
+          setOpen={setOpen}
           name="Magma"
           image="/software/magma.png"
           color="#8B0505"
         />
         <NavbarComponent
+          setOpen={setOpen}
           name="Travertine"
           image="/software/travertine.png"
           color="#8B4505"
         />
         <NavbarComponent
+          setOpen={setOpen}
           name="Velocity"
           image="/software/velocity.png"
           color="#058B2B"
         />
         <NavbarComponent
+          setOpen={setOpen}
           name="Waterfall"
           image="/software/waterfall.png"
           color="#08058B"
         />
+        <div className="h-[80px] shrink-0"></div>
       </div>
     </div>
   );
