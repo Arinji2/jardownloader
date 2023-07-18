@@ -1,5 +1,5 @@
 "use client";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 function SliderAnimation() {
@@ -9,7 +9,7 @@ function SliderAnimation() {
     const slider = document.querySelector(".slider") as HTMLElement;
     const timeout = setTimeout(() => {
       slider.classList.remove("sliderOut");
-    }, 500);
+    }, 700);
 
     return () => {
       clearTimeout(timeout);
@@ -17,10 +17,10 @@ function SliderAnimation() {
   }, [path]);
   return (
     <motion.div
-      initial={{ translateX: "0px" }}
+      initial={{ translateX: "1900px" }}
       animate={{ translateX: "-2000px" }}
-      transition={{ duration: 3, ease: "linear" }}
-      className="absolute  top-0 left-0 bg-theme-accent w-full h-[100svh] z-10"
+      transition={{ duration: 4, ease: "linear", delay: 0.1 }}
+      className="absolute  top-0 left-0 bg-theme-accent w-full h-[100svh] z-10 md:block"
     ></motion.div>
   );
 }

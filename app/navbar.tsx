@@ -114,7 +114,7 @@ function Navbar() {
           image="/software/waterfall.png"
           color="#08058B"
         />
-        <div className="h-[80px] shrink-0"></div>
+        <div className="md:h-[10px] h-[80px] shrink-0"></div>
       </div>
     </div>
   );

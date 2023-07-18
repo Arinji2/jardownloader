@@ -1,21 +1,27 @@
 "use client";
 
-import React from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { usePathname } from "next/navigation";
+import React, { useEffect } from "react";
 
 function ParentAnimation({ children }: { children: React.ReactNode }) {
+  const path = usePathname();
+  const [isMounted, setIsMounted] = React.useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      setIsMounted(true);
+    }, 100);
+    return () => setIsMounted(false);
+  }, [path]);
   return (
-    <AnimatePresence>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 100 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 0, ease: "easeIn", delay: 1 }}
-        className="h-full w-full  flex flex-col items-center justify-start gap-7 z-0"
-      >
-        {children}
-      </motion.div>
-    </AnimatePresence>
+    <div
+      className={`${
+        isMounted
+          ? "translate-x-0 md:translate-x-0 "
+          : "translate-x-0 md:translate-x-[2000px] "
+      }h-full  w-full bg-gradient-to-b from-[#101F2C] to-[#132535]  flex flex-col items-center justify-start gap-7 z-0 transition-all ease-linear duration-[2000ms]`}
+    >
+      {children}
+    </div>
   );
 }
 
