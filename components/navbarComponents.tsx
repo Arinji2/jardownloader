@@ -3,7 +3,7 @@ import * as React from "react";
 
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 export default function NavbarComponent({
   name,
@@ -17,12 +17,15 @@ export default function NavbarComponent({
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
   const router = useRouter();
+  const path = usePathname();
   return (
     <React.Fragment>
       <div
         onClick={() => {
           setOpen(false);
           const slider = document.querySelector(".slider") as HTMLElement;
+
+          if (path === `/software/${name.toLowerCase()}`) return;
 
           slider.classList.add("sliderOut");
           router.prefetch(`/software/${name.toLowerCase()}`);
