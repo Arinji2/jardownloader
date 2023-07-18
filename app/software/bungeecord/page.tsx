@@ -1,9 +1,11 @@
 import JarComponent from "@/components/jarComponent";
+import SliderAnimation from "@/components/sliderAnimation";
 import content from "@/data/bungee.json";
 
 export default async function Home() {
   return (
     <div className="w-full h-full flex flex-col items-center justify-start">
+      <SliderAnimation />
       <h1 className="text-white font-bold text-[40px] md:text-[60px] mt-10">
         BUNGEECORD
       </h1>

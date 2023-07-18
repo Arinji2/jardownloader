@@ -25,3 +25,36 @@ html {
 ::-webkit-scrollbar-thumb:hover {
   background: #c2c2c2;
 }
+
+@keyframes slideExitAnimation {
+  0% {
+    transform: translateX(-2000px);
+  }
+  100% {
+    transform: translateX(30px);
+  }
+}
+
+@keyframes slideEnterANimation {
+  0% {
+    transform: translateX(0px);
+  }
+  100% {
+    transform: translateX(-2000px);
+  }
+}
+.sliderIn {
+  animation-name: slideEnterAnimation;
+  animation-duration: 4s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+
+.sliderOut {
+  animation-name: slideExitAnimation;
+  animation-duration: 4s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}

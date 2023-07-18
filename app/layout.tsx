@@ -1,7 +1,10 @@
+"use client";
 import "./globals.css";
 import { Montserrat } from "next/font/google";
 import Navbar from "./navbar";
 import Footer from "./footer";
+
+import { motion } from "framer-motion";
 
 import { usePathname } from "next/navigation";
 
@@ -21,13 +24,15 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const path = usePathname();
   return (
     <html lang="en">
       <body className={montserrat.className}>
         <div className=" w-full min-h-[100svh] h-fit flex md:flex-row md:items-start items-center justify-start md:justify-center flex-col bg-gradient-to-b from-[#101F2C] to-[#132535]">
           <Navbar />
 
-          <div className="md:w-[70%] w-full h-full flex flex-col items-center justify-start">
+          <div className="md:w-[70%] w-full h-full flex flex-col items-center justify-start relative">
+            <div className="absolute  top-0 right-0 bg-theme-accent w-[110vw] h-full z-20 slider -translate-x-[2000px]"></div>
             {children} <Footer />
           </div>
         </div>

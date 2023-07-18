@@ -1,9 +1,11 @@
 import JarComponent from "@/components/jarComponent";
+import SliderAnimation from "@/components/sliderAnimation";
 import content from "@/data/vanilla.json";
 
 export default async function Home() {
   return (
     <div className="w-full h-full flex flex-col items-center justify-start gap-7">
+      <SliderAnimation />
       <h1 className="text-white font-bold text-[60px] mt-10">VANILLA</h1>
       <div className="md:w-[60%] text-center w-[90%] text-theme-foreground font-medium text-[10px] md:text-[15px]">
         VANILLA MC IS THE ORIGINAL MINECRAFT SERVER SOFTWARE. IT LACKS IN PROPER
