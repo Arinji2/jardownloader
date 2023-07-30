@@ -12,11 +12,12 @@ export default async function Home() {
       </div>
 
       <div className="h-full w-full flex flex-col items-center justify-start gap-4">
-        {content.map((jar) => (
+        {content.map((jar, i) => (
           <JarComponent
             name="Vanilla"
             version={jar.version}
             updated={jar.updated_at}
+            index={i}
             key={jar.version + jar.updated_at}
             color="#058B60"
           />
