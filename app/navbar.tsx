@@ -39,11 +39,11 @@ function Navbar() {
       </div>
       <div
         className={`${
-          open ? "translate-x-0 " : "-translate-x-[2000px] "
-        }transition-all navbar ease-in-out duration-700 md:translate-x-0 h-[100svh] md:h-full w-full flex flex-col items-center justify-start gap-5 mt-10 md:static fixed top-14 bg-theme-background  overflow-auto`}
+          open ? "w-[100%] " : "w-[0%] "
+        }transition-all navbar ease-in-out duration-700 md:w-[100%] h-[100svh] md:h-full left-0 origin-left flex flex-col items-center justify-start gap-5 mt-10 md:static fixed top-14 bg-theme-background  overflow-auto`}
       >
         <div
-          className={` mt-10 rounded-[4px] p-4 w-fit h-fit flex flex-row items-center justify-center gap-7 bg-theme-accent `}
+          className={`shrink-0 mt-10 rounded-[4px] p-4 w-[300px] h-fit flex flex-row items-center justify-center gap-7 bg-theme-accent `}
         >
           <p className="text-[30px]">SELECT JAR</p>
           <FontAwesomeIcon icon={faCube} className="w-[30px] h-[30px]" />

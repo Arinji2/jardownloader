@@ -3,6 +3,7 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { Plus } from "lucide-react";
 
 export default function JarComponent({
   name,
@@ -53,7 +54,7 @@ export default function JarComponent({
       <div className="w-[1px] h-[80%] bg-white md:block hidden"></div>
       <div className="w-[70%] md:w-[55%] h-full   flex flex-row items-center justify-center gap-5 ">
         <p
-          className="md:text-[15px] text-[13px] font-medium p-3 bg-[--color] rounded-[3px] border-4 border-[--color] hover:bg-white hover:text-[--color] transition-all ease-in-out duration-500 hover:cursor-pointer "
+          className="md:text-[15px] text-[10px] font-medium p-2 md:p-3 bg-[--color] rounded-[3px] border-4 border-[--color] hover:bg-white hover:text-[--color] transition-all ease-in-out duration-500 hover:cursor-pointer "
           style={{ "--color": color } as React.CSSProperties}
           onClick={() => {
             window.open(
@@ -66,10 +67,11 @@ export default function JarComponent({
         </p>
         <Link
           href={`/create?ver=${versionId}`}
-          className="md:text-[15px] text-[13px] font-medium p-3 bg-[--color] rounded-[3px] border-4 border-[--color] hover:bg-white hover:text-[--color] transition-all ease-in-out duration-500 hover:cursor-pointer md:block hidden"
+          className="md:text-[15px] text-[10px] font-medium p-2 md:p-3 bg-[--color] rounded-[3px] border-4 border-[--color] hover:bg-white hover:text-[--color] transition-all ease-in-out duration-500 hover:cursor-pointer "
           style={{ "--color": color } as React.CSSProperties}
         >
-          CREATE SERVER
+          <p className="md:block hidden">CREATE SERVER</p>
+          <Plus className="h-[12px] w-[12px] text-white md:hidden block" />
         </Link>
       </div>
     </motion.div>
