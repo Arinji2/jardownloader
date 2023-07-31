@@ -11,7 +11,7 @@ function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="md:w-[30%] z-[1000] w-full h-[100px] bg-theme-background md:h-[100svh]  sticky top-0 overflow-auto flex flex-col items-center justify-start  border-theme-accent border-b-[5px] md:border-0">
+    <div className="md:w-[30%] z-[1000] w-full h-fit md:h-[100svh] bg-theme-background   sticky top-0 overflow-auto flex flex-col items-center justify-start  border-theme-accent border-b-[5px] md:border-0">
       <div className="w-full h-[100px] flex flex-row items-center justify-between">
         <div className="w-[20%] h-full flex flex-row items-center justify-center md:hidden ">
           <div className="w-fit h-fit p-4 bg-theme-accent flex flex-col items-center justify-center rounded-lg ml-5">
