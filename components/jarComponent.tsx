@@ -31,7 +31,7 @@ export default function JarComponent({
     else if (version.startsWith("1.15")) setVersionId("3");
     else if (version.startsWith("1.16")) setVersionId("3");
     else setVersionId("4");
-  }, []);
+  }, [name, version]);
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -66,7 +66,7 @@ export default function JarComponent({
           DOWNLOAD JAR
         </p>
         <Link
-          href={`/create?ver=${versionId}`}
+          href={`/create/${versionId}`}
           className="md:text-[15px] text-[10px] font-medium p-2 md:p-3 bg-[--color] rounded-[3px] border-4 border-[--color] hover:bg-white hover:text-[--color] transition-all ease-in-out duration-500 hover:cursor-pointer "
           style={{ "--color": color } as React.CSSProperties}
         >

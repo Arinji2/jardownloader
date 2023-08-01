@@ -1,12 +1,14 @@
 import { ExtremeCard, PremiumCard } from "./cards";
-
+export function generateStaticParams() {
+  return [{ ver: "0" }, { ver: "1" }, { ver: "2" }, { ver: "3" }, { ver: "4" }];
+}
 export default async function Page({
-  searchParams,
+  params,
 }: {
-  searchParams: { ver: string | undefined };
+  params: { ver: string | undefined };
 }) {
   let version = "1";
-  if (searchParams.ver != undefined) version = searchParams.ver;
+  if (params.ver != undefined) version = params.ver;
 
   return (
     <div className="w-full h-fit min-h-[100svh] flex flex-col items-center justify-start gap-10">

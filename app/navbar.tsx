@@ -82,7 +82,7 @@ function Navbar() {
           setOpen={setOpen}
           name="FORGE"
           image="/software/forge.png"
-          color="#E5E5E5"
+          color="#585858"
         />
         <NavbarComponent
           setOpen={setOpen}
@@ -92,25 +92,31 @@ function Navbar() {
         />
         <NavbarComponent
           setOpen={setOpen}
-          name="Magma"
+          name="MAGMA"
           image="/software/magma.png"
           color="#8B0505"
         />
         <NavbarComponent
           setOpen={setOpen}
-          name="Travertine"
+          name="SPONGEFORGE"
+          image="/software/spongeforge.png"
+          color="#FFC700"
+        />
+        <NavbarComponent
+          setOpen={setOpen}
+          name="TRAVERTINE"
           image="/software/travertine.png"
           color="#8B4505"
         />
         <NavbarComponent
           setOpen={setOpen}
-          name="Velocity"
+          name="VELOCITY"
           image="/software/velocity.png"
           color="#058B2B"
         />
         <NavbarComponent
           setOpen={setOpen}
-          name="Waterfall"
+          name="WATERFALL"
           image="/software/waterfall.png"
           color="#08058B"
         />
